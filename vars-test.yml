@@ -5,3 +5,4 @@ bosh-test-director: bosh-1
 bosh-test-client-id: admin
 bosh-test-client-secret: 8swb1ni9om9mi1x6ypnk
 bosh-test-ca-cert: bosh-ca.crt
+test_alert: dummy_alert
