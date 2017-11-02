@@ -18,8 +18,6 @@ jobs:
       - stemcell/stemcell.tgz
       releases:
       - prometheus-boshrelease/release.tgz
-      vars_files:
-      - Deployment-Prometheus/vars-test.yml
 
 resource_types:
 - name: bosh-deployment
