@@ -1,8 +1,30 @@
-git-deployment-prometheus: https://github.com/whams/deploy-prometheus-to-test
-git-private-key:
-bosh-deployment: deploy-prometheus-to-test
-bosh-test-director: bosh-1
+git-deployment-prometheus: https://github.com/whams/deploy-prometheus-to-test.git
+bosh-deployment: prometheus
+bosh-test-director: 192.168.2.253
 bosh-test-client-id: admin
 bosh-test-client-secret: 8swb1ni9om9mi1x6ypnk
-bosh-test-ca-cert: bosh-ca.crt
-test_alert: dummy_alert
+bosh-test-ca-cert: |
+  -----BEGIN CERTIFICATE-----
+MIIEEzCCAnugAwIBAgIQbYqSwhZeqfM7F+CMwWPcVDANBgkqhkiG9w0BAQsFADAz
+MQwwCgYDVQQGEwNVU0ExFjAUBgNVBAoTDUNsb3VkIEZvdW5kcnkxCzAJBgNVBAMT
+AmNhMB4XDTE3MTAzMDExMDExNVoXDTE4MTAzMDExMDExNVowMzEMMAoGA1UEBhMD
+VVNBMRYwFAYDVQQKEw1DbG91ZCBGb3VuZHJ5MQswCQYDVQQDEwJjYTCCAaIwDQYJ
+KoZIhvcNAQEBBQADggGPADCCAYoCggGBANGJ3QqmVOEEU5VcEx8jCTc8eclkxiuL
+zoJUQGYa98Gjr1BS1kzSu0qh1rqfc3pWEKt5RpZtiyGoEllcpA2rfRimMRkUrdZU
+ftsjUhmoW1GX8RH1nSNFoTFMuxpZHVTha7GWEHsJDfXuwfQcJcvoFBgG7podybh2
+0rRf8cMrHxUtbAMSyI3BSfciEUX6Hcs+flp8zL/NlpFHSuvvSTTodQsY6KI1FvGS
+r1Hy+OG/dvAzppl6EPRgp8R5ePFItbjEOLXGFjC4VddnsKehon59a8Qac+eTz2uA
+3wnv3r6aSuvZjNfLdgJVHJISj2UcYhm99MCAVxg1tGpKFm9Bieilr52z5Kw0sIL9
+o4wOKALsGNzsKO3n9GstsVJbA2VDHRiYvGLqpKNhwQ5TgL56MeL0uZnW4L70kFAq
+mTX5TVMjdiX7zaOXiUbCxQFEpVvmJhe9KcSPvGHcqjw4W+NzW14l78HbkeFVYnb4
+v3yeVlnf0eEcNFDio08LwPs7y8PlouSXnQIDAQABoyMwITAOBgNVHQ8BAf8EBAMC
+AQYwDwYDVR0TAQH/BAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAYEAMJwhyqVPpnCt
+cB/9zmee6Fi44pMo00arfKLUxC91R18baS7QVxcIdVr1I7I+MkPD24ebcJF7I2+c
+q0pcsMN6Mc5GJCpagOfgbAtco1rj7RwfUa1rtq21ysDFrcH5byAQ1ADv/PhMZF1N
+5ZcWSzcQD1VQEseYAoPnuF3/rsHjdVIB+gOWwYD1beURLE63vBV7uKeJrOeDpguz
+jb7g/F48xWS84NCdbf3WkutMpwOsxl3vwTX8nMr/e3msnCdiVUQVMTrWM+8yaBqT
+Z9J+FpH92YzRwoZ5NrEF9jPa5TpeZBWMJzIZ+5UNcUEAZdwNTEYchgqhjn6NZ21X
+dlc2dF3/mActuhi+nG7wM3eGVLE9SkqZV8uN7B5ksGdAHc1jMwAsTihhXzMbKd26
+4V3IQdXWB8GGnkyhKtzN68xnxEdKIBQlgC4sart3miHR2aBmzAWQ7LskwXW8hubQ
+aFNzcwWQ5/hE7DhLruHl3fYd6+WdPmjCxUPSfnXlSiKjVKCxmsXJ
+-----END CERTIFICATE-----
