@@ -1,0 +1,52 @@
+---
+jobs:
+- name: deploy-prometheus-to-test
+  public: false
+  serial: true
+  plan:
+  - aggregate:
+    - get: Deployment-Prometheus
+      trigger: true
+    - get: stemcell
+      trigger: true
+    - get: prometheus-boshrelease
+      trigger: true
+  - put: deploy-to-test
+    params:
+      manifest: Deployment-Prometheus/prometheus.yml
+      stemcells:
+      - stemcell/stemcell.tgz
+      releases:
+      - prometheus-boshrelease/release.tgz
+      vars_files:
+      - Deployment-Prometheus/vars-test.yml
+
+resource_types:
+- name: bosh-deployment
+  type: docker-image
+  source:
+    repository: cloudfoundry/bosh-deployment-resource
+
+resources:
+- name: Deployment-Prometheus
+  type: git
+  source:
+    uri: ((git-deployment-prometheus))
+    private_key: ((git-private-key))
+
+- name: deploy-to-test
+  type: bosh-deployment
+  source:
+    deployment: ((bosh-deployment))
+    target: ((bosh-test-director))
+    client: ((bosh-test-client-id))
+    client_secret: ((bosh-test-client-secret))
+    ca_cert: ((bosh-test-ca-cert))
+- name: prometheus-boshrelease
+  type: bosh-io-release
+  source:
+    repository: cloudfoundry-community/prometheus-boshrelease
+- name: stemcell
+  type: bosh-io-stemcell
+  source:
+    name: bosh-vsphere-esxi-ubuntu-trusty-go_agent

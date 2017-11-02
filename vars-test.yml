@@ -1,0 +1,7 @@
+git-deployment-prometheus: https://github.com/whams/deploy-prometheus-to-test
+git-private-key:
+bosh-deployment: deploy-prometheus-to-test
+bosh-test-director: bosh-1
+bosh-test-client-id: admin
+bosh-test-client-secret: 8swb1ni9om9mi1x6ypnk
+bosh-test-ca-cert: bosh-ca.crt
